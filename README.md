@@ -26,7 +26,7 @@ This step helps to:
 - Inspect column-level details
 - Prepare for accurate data analysis
 
-We use `INFORMATION_SCHEMA` to explore metadata about the database.
+## We use `INFORMATION_SCHEMA` to explore metadata about the database.
 /*
 ===============================================================================
 Database Exploration
@@ -36,7 +36,6 @@ Purpose:
     - List all tables and schemas
     - Inspect columns of key tables
 ===============================================================================
-*/
 ``` sql
 -- Retrieve all tables in the database
 SELECT 
