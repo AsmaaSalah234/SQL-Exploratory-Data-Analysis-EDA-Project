@@ -29,9 +29,9 @@ This step helps to:
 ## We use `INFORMATION_SCHEMA` to explore metadata about the database.
 # Database Exploration
 Purpose:
-    - Explore database structure
-    - List all tables and schemas
-    - Inspect columns of key tables
+    - Explore database structure  
+    - List all tables and schemas  
+    - Inspect columns of key tables  
 
 ``` sql
 -- Retrieve all tables in the database
