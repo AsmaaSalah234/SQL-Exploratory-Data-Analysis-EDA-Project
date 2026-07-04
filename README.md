@@ -26,8 +26,8 @@ This step helps to:
 - Inspect column-level details
 - Prepare for accurate data analysis
 
-## Dimensions Exploration
-This step is used to understand the structure of the business data by exploring key dimensions. It helps identify where customers come from geographically and how products are organized. This supports better decision-making in marketing, sales strategy, and product analysis. 
+## Database Exploration
+This step is used to understand the overall structure of the database before starting the analysis. It helps identify all available tables, their schemas, and the metadata of key datasets. This ensures that the analysis is based on a clear understanding of the data model and supports accurate and reliable business insights.
 
 ``` sql
 /*
@@ -61,3 +61,33 @@ SELECT
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'dim_customers';
 ```
+## Dimensions Exploration
+This step focuses on understanding the structure of the business dimensions. It helps identify customer geography and product hierarchy, which are essential for segmentation, targeting, and performance analysis. This provides a clear view of who the customers are and what products the business offers.
+`` sql 
+/*
+===============================================================================
+Dimensions Exploration
+===============================================================================
+Purpose:
+    - To explore the structure of dimension tables.
+	
+SQL Functions Used:
+    - DISTINCT
+    - ORDER BY
+===============================================================================
+*/
+
+-- Retrieve a list of unique countries from which customers originate
+SELECT DISTINCT 
+    country 
+FROM gold.dim_customers
+ORDER BY country;
+
+-- Retrieve a list of unique categories, subcategories, and products
+SELECT DISTINCT 
+    category, 
+    subcategory, 
+    product_name 
+FROM gold.dim_products
+ORDER BY category, subcategory, product_name;
+``
