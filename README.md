@@ -61,9 +61,9 @@ SELECT
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'dim_customers';
 ```
-## Dimensions Exploration
+## Dimensions Exploration  
 This step focuses on understanding the structure of the business dimensions. It helps identify customer geography and product hierarchy, which are essential for segmentation, targeting, and performance analysis. This provides a clear view of who the customers are and what products the business offers.
-`` sql 
+``` sql 
 /*
 ===============================================================================
 Dimensions Exploration
@@ -90,4 +90,4 @@ SELECT DISTINCT
     product_name 
 FROM gold.dim_products
 ORDER BY category, subcategory, product_name;
-``
+```
