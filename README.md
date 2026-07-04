@@ -91,3 +91,34 @@ SELECT DISTINCT
 FROM gold.dim_products
 ORDER BY category, subcategory, product_name;
 ```
+## Date Range Exploration
+This step is used to understand the time coverage of the dataset and key historical boundaries. It helps identify how far the sales data goes back and how recent it is. It also provides insights into customer age distribution, which is useful for segmentation and targeting strategies.
+```sql
+/*
+===============================================================================
+Date Range Exploration 
+===============================================================================
+Purpose:
+    - To determine the temporal boundaries of key data points.
+    - To understand the range of historical data.
+
+SQL Functions Used:
+    - MIN(), MAX(), DATEDIFF()
+===============================================================================
+*/
+
+-- Determine the first and last order date and the total duration in months
+SELECT 
+    MIN(order_date) AS first_order_date,
+    MAX(order_date) AS last_order_date,
+    DATEDIFF(MONTH, MIN(order_date), MAX(order_date)) AS order_range_months
+FROM gold.fact_sales;
+
+-- Find the youngest and oldest customer based on birthdate
+SELECT
+    MIN(birthdate) AS oldest_birthdate,
+    DATEDIFF(YEAR, MIN(birthdate), GETDATE()) AS oldest_age,
+    MAX(birthdate) AS youngest_birthdate,
+    DATEDIFF(YEAR, MAX(birthdate), GETDATE()) AS youngest_age
+FROM gold.dim_customers;
+```
