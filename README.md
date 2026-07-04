@@ -26,14 +26,23 @@ This step helps to:
 - Inspect column-level details
 - Prepare for accurate data analysis
 
-## We use `INFORMATION_SCHEMA` to explore metadata about the database.
-# Database Exploration
-Purpose:  
-    - Explore database structure  
-    - List all tables and schemas  
-    - Inspect columns of key tables  
+## Dimensions Exploration
+This step is used to understand the structure of the business data by exploring key dimensions. It helps identify where customers come from geographically and how products are organized. This supports better decision-making in marketing, sales strategy, and product analysis. 
 
 ``` sql
+/*
+===============================================================================
+Database Exploration
+===============================================================================
+Purpose:
+    - To explore the structure of the database, including the list of tables and their schemas.
+    - To inspect the columns and metadata for specific tables.
+
+Table Used:
+    - INFORMATION_SCHEMA.TABLES
+    - INFORMATION_SCHEMA.COLUMNS
+===============================================================================
+*/
 -- Retrieve all tables in the database
 SELECT 
     TABLE_CATALOG, 
