@@ -259,6 +259,7 @@ ORDER BY total_sold_items DESC;
 ```
 ## Ranking Analysis
 This step is used to identify the best and worst performers within the business, such as top products and high-value customers. It helps prioritize business focus areas, improve decision-making, and understand which products or customers contribute most or least to revenue. This is essential for performance tracking and strategic planning.  
+```sql
 /*
 ===============================================================================
 Ranking Analysis
